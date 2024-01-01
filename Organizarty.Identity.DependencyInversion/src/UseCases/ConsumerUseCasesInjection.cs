@@ -14,6 +14,8 @@ public static class ConsumerUseCasesInjection
         services.AddScoped<RegisterConsumerUseCase>();
         services.AddScoped<LoginConsumerUseCase>();
         services.AddScoped<SelectConsumerUseCase>();
+        services.AddScoped<SendEmailConfirmationUseCase>();
+        services.AddScoped<ConfirmConsumerCodeUseCase>();
 
         return services;
     }

@@ -8,6 +8,7 @@ public class ApplicationDbContext : DbContext
     public ApplicationDbContext(DbContextOptions options) : base(options) { }
 
     public DbSet<Consumer> Consumers { get; set; } = default!;
+    public DbSet<ConsumerEmailConfirmation> ConsumerEmailConfirmations { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.9.0" />
+    <PackageReference Include="Nanoid" Version="3.0.0" />
     <PackageReference Include="Organizarty.Domain" Version="1.0.0" />
     <PackageReference Include="Organizarty.Utils" Version="1.0.0" />
   </ItemGroup>
