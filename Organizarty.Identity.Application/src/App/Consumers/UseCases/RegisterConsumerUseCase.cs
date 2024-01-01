@@ -8,7 +8,7 @@ namespace Organizarty.Identity.Application.App.Consumers.UseCases;
 
 public class RegisterConsumerUseCase
 {
-    public record SimpleRegister(string Email, string Password);
+    public record SimpleRegister(string Email, string Password, string Username, string Fullname, DateTime BirthDate);
 
     private readonly ICryptographys _cryptograph;
     private readonly IConsumerRepository _consumerRepository;
@@ -40,7 +40,11 @@ public class RegisterConsumerUseCase
     private Consumer ToModel(SimpleRegister x)
       => new()
       {
-
+          Email = x.Email,
+          UserName = x.Username,
+          Fullname = x.Fullname,
+          HashedPassword = x.Password,
+          BirthDate = x.BirthDate,
       };
 }
 

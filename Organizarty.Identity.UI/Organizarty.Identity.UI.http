@@ -1,0 +1,6 @@
+@Organizarty.Identity.UI_HostAddress = http://localhost:5137
+
+GET {{Organizarty.Identity.UI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

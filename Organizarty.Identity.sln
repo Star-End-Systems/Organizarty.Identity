@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizarty.Identity.Depend
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizarty.Identity.Infra", "Organizarty.Identity.Infra\Organizarty.Identity.Infra.csproj", "{A1DD24FA-AF3F-484E-8BF5-031525DA2DC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizarty.Identity.UI", "Organizarty.Identity.UI\Organizarty.Identity.UI.csproj", "{C62F688D-93DC-41FB-ACFD-81C0854F8D1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{A1DD24FA-AF3F-484E-8BF5-031525DA2DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1DD24FA-AF3F-484E-8BF5-031525DA2DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1DD24FA-AF3F-484E-8BF5-031525DA2DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C62F688D-93DC-41FB-ACFD-81C0854F8D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62F688D-93DC-41FB-ACFD-81C0854F8D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C62F688D-93DC-41FB-ACFD-81C0854F8D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C62F688D-93DC-41FB-ACFD-81C0854F8D1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
