@@ -21,7 +21,7 @@ jobs:
      id: meta
      uses: docker/metadata-action@v3
      with:
-       images: ${{env.DOCKERHUB_IMAGE_REPOSITORY}}
+       images: dossancto/organizarty-identity # Update to variable
 
    - name: Build and push Docker image
      uses: docker/build-push-action@v2
