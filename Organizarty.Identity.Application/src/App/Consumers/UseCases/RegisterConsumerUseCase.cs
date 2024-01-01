@@ -2,7 +2,7 @@ using FluentValidation;
 using Organizarty.Identity.Adapters.Cryptographies;
 using Organizarty.Identity.Application.App.Consumers.Data;
 using Organizarty.Identity.Application.App.Consumers.Entities;
-using Organizarty.Utils.Extensions;
+using Organizarty.Utils.Validations.Extensions;
 
 namespace Organizarty.Identity.Application.App.Consumers.UseCases;
 
@@ -13,14 +13,12 @@ public class RegisterConsumerUseCase
     private readonly ICryptographys _cryptograph;
     private readonly IConsumerRepository _consumerRepository;
     private readonly IValidator<Consumer> _userValidator;
-    private readonly SendEmailConfirmationUseCase _sendEmailConfirmation;
 
-    public RegisterConsumerUseCase(ICryptographys cryptograph, IConsumerRepository consumerRepository, IValidator<Consumer> userValidator, SendEmailConfirmationUseCase sendEmailConfirmation)
+    public RegisterConsumerUseCase(ICryptographys cryptograph, IConsumerRepository consumerRepository, IValidator<Consumer> userValidator)
     {
         _cryptograph = cryptograph;
         _consumerRepository = consumerRepository;
         _userValidator = userValidator;
-        _sendEmailConfirmation = sendEmailConfirmation;
     }
 
     public async Task<Consumer> Execute(SimpleRegister userDto)
@@ -35,8 +33,6 @@ public class RegisterConsumerUseCase
         consumer.Salt = salt;
 
         var u = await _consumerRepository.Save(consumer);
-
-        await _sendEmailConfirmation.Execute(userDto.Email);
 
         return u;
     }
