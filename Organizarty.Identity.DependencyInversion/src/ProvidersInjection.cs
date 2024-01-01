@@ -2,7 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Organizarty.Identity.Adapters.Cryptographies;
 using Organizarty.Identity.Infra.Providers.Cryptographys;
 using Organizarty.Identity.DependencyInversion.Providers.EmailSenders;
-using Organizarty.Identity.Adapters.EmailSenders;
+using Organizarty.Identity.Adapters.Tokens;
 using Organizarty.Identity.Infra.Providers.Tokens;
 
 namespace Organizarty.Identity.DependencyInversion;

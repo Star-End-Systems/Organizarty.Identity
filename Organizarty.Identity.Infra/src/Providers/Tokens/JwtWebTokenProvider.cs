@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 
 using Microsoft.IdentityModel.Tokens;
 
-using Organizarty.Identity.Adapters.EmailSenders;
+using Organizarty.Identity.Adapters.Tokens;
 
 namespace Organizarty.Identity.Infra.Providers.Tokens;
 
@@ -33,6 +33,15 @@ public class JwtWebTokenProvider : IWebTokenProvider
         string tokenStr = tokenHandler.WriteToken(token) ?? throw new Exception("Fail while creating token");
 
         return tokenStr;
+    }
 
+    public string? ReadIdFromToken(string jwtToken)
+    {
+        var handler = new JwtSecurityTokenHandler();
+        var jsonToken = handler.ReadJwtToken(jwtToken);
+
+        var id = jsonToken.Claims.FirstOrDefault(x => x.Type == "nameid")?.Value;
+
+        return id;
     }
 }

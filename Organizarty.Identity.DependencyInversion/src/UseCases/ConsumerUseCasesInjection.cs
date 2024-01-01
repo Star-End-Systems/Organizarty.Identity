@@ -13,6 +13,7 @@ public static class ConsumerUseCasesInjection
 
         services.AddScoped<RegisterConsumerUseCase>();
         services.AddScoped<LoginConsumerUseCase>();
+        services.AddScoped<SelectConsumerUseCase>();
 
         return services;
     }

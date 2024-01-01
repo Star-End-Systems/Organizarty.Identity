@@ -18,7 +18,7 @@ public partial class ConsumerController
 
         var token = _tokenProvider.GenerateToken(user.Id, user.Fullname, "Consumer");
 
-        var response = new LoginUserResponse(user, token);
+        var response = new LoginUserResponse(SecureConsumerResponse.FromEntity(user), token);
 
         return Ok(response);
     }
