@@ -23,4 +23,4 @@ jobs:
       
     - name: Run EF Migrations
       run: |
-        dotnet ef database update -c YourDbContext -p YourProjectPath --connection "${{ secrets.YOUR_CONNECTION_STRING }}"
+        dotnet ef database update -p Organizarty.Identity.UI --connection "${{ secrets.POSTGRES_CONNECTION_STRING }}"
