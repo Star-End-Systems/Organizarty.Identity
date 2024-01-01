@@ -21,7 +21,7 @@ jobs:
      id: meta
      uses: docker/metadata-action@v3
      with:
-       images: user/app
+       images: dossancto/organizarty-identity
 
    - name: Build and push Docker image
      uses: docker/build-push-action@v2
