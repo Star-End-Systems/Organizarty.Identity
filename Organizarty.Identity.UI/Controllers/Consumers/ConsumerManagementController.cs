@@ -8,7 +8,9 @@ public partial class ConsumerController
     [HttpPost]
     public async Task<IActionResult> RegisterConsumer(RegisterConsumerUseCase.SimpleRegister registerDto)
     {
-        return Ok(await _registerConsumer.Execute(registerDto));
+        var consumer = await _registerConsumer.Execute(registerDto);
+
+        return Ok(SecureConsumerResponse.FromEntity(consumer));
     }
 
     [HttpPost("login")]

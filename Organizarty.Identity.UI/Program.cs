@@ -1,4 +1,5 @@
 using Organizarty.Identity.DependencyInversion;
+using Organizarty.Identity.UI.Middlewares;
 
 using Organizarty.Web.Utils.ServicesConfigurations;
 
@@ -36,5 +37,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<ErrorHandleMiddleware>();
 
 app.Run();

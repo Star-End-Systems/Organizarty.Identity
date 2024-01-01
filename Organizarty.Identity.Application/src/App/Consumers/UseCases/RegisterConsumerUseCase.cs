@@ -14,11 +14,14 @@ public class RegisterConsumerUseCase
     private readonly IConsumerRepository _consumerRepository;
     private readonly IValidator<Consumer> _userValidator;
 
-    public RegisterConsumerUseCase(ICryptographys cryptograph, IConsumerRepository consumerRepository, IValidator<Consumer> userValidator)
+    private readonly SendEmailConfirmationUseCase _sendEmailConfirmation;
+
+    public RegisterConsumerUseCase(ICryptographys cryptograph, IConsumerRepository consumerRepository, IValidator<Consumer> userValidator, SendEmailConfirmationUseCase sendEmailConfirmation)
     {
         _cryptograph = cryptograph;
         _consumerRepository = consumerRepository;
         _userValidator = userValidator;
+        _sendEmailConfirmation = sendEmailConfirmation;
     }
 
     public async Task<Consumer> Execute(SimpleRegister userDto)
@@ -31,6 +34,8 @@ public class RegisterConsumerUseCase
 
         consumer.HashedPassword = password;
         consumer.Salt = salt;
+
+        await _sendEmailConfirmation.Execute(userDto.Email);
 
         var u = await _consumerRepository.Save(consumer);
 
