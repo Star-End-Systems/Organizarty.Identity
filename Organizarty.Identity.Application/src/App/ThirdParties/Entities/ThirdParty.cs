@@ -1,4 +1,4 @@
-using Organizarty.Identity.Application.App.Users.Entities;
+using Organizarty.Domain.Entities.Accounts;
 
 namespace Organizarty.Identity.Application.App.Consumers.Entities;
 

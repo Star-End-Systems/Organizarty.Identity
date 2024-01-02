@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Organizarty.Domain.Identifiers;
 using Organizarty.Identity.Application.App.Consumers.Data;
-using Organizarty.Identity.Application.App.Consumers.Entities;
+using Organizarty.Domain.Entities.Consumers;
 using Organizarty.Identity.Infra.Database.EF.Contexts;
 
 namespace Organizarty.Identity.Infra.Database.EF.Repositories;

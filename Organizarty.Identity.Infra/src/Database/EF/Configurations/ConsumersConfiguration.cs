@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Organizarty.Domain.Entities.Consumers;
 using Organizarty.Domain.Identifiers;
-using Organizarty.Identity.Application.App.Consumers.Entities;
 
 namespace LivrariaOnline.Backend.Infra.Database.EF.Configurations;
 

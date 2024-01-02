@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Organizarty.Identity.Application.App.Consumers.UseCases;
+using Organizarty.Identity.Application.App.Consumers.Entities;
+using Organizarty.Domain.Entities.Consumers;
 using Organizarty.Identity.Adapters.Tokens;
 
 namespace Organizarty.Identity.UI.Controllers;

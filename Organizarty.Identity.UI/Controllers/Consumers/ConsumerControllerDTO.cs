@@ -1,4 +1,5 @@
-using Organizarty.Identity.Application.App.Consumers.Entities;
+using Organizarty.Domain.Entities.Consumers;
+
 namespace Organizarty.Identity.UI.Controllers;
 
 public record SecureConsumerResponse(string Id, string Fullname, DateTime BirthDate, string Email, DateTime CreatedAt)

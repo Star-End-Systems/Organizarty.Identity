@@ -1,7 +1,7 @@
 using FluentValidation;
+using Organizarty.Domain.Entities.Consumers;
 using Organizarty.Identity.Adapters.Cryptographies;
 using Organizarty.Identity.Application.App.Consumers.Data;
-using Organizarty.Identity.Application.App.Consumers.Entities;
 using Organizarty.Utils.Validations.Extensions;
 
 namespace Organizarty.Identity.Application.App.Consumers.UseCases;

@@ -1,6 +1,5 @@
 using FluentValidation;
-
-using Organizarty.Identity.Application.App.Consumers.Entities;
+using Organizarty.Domain.Entities.Consumers;
 using Organizarty.Utils.Validations.CustomValidations;
 
 namespace Organizarty.Application.App.Users.Entities;

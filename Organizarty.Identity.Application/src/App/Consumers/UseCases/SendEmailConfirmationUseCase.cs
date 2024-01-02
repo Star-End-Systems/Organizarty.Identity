@@ -7,7 +7,6 @@ namespace Organizarty.Identity.Application.App.Consumers.UseCases;
 
 public class SendEmailConfirmationUseCase
 {
-    private readonly IConsumerRepository _consumerRepository;
     private readonly IConsumerEmailConfirmationRepository _confirmationRepository;
     private readonly IEmailSender _emailSender;
 
@@ -15,9 +14,8 @@ public class SendEmailConfirmationUseCase
     public readonly int CODE_SIZE = 4;
     public readonly string ID_VALID_CHARACTERs = "1234567890";
 
-    public SendEmailConfirmationUseCase(IConsumerRepository consumerRepository, IEmailSender emailSender, IConsumerEmailConfirmationRepository confirmationRepository)
+    public SendEmailConfirmationUseCase(IEmailSender emailSender, IConsumerEmailConfirmationRepository confirmationRepository)
     {
-        _consumerRepository = consumerRepository;
         _emailSender = emailSender;
         _confirmationRepository = confirmationRepository;
     }
