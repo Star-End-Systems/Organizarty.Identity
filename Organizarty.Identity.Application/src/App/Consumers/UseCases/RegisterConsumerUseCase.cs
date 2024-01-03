@@ -1,5 +1,6 @@
 using FluentValidation;
 using Organizarty.Domain.Entities.Consumers;
+using Organizarty.Domain.Exceptions;
 using Organizarty.Identity.Adapters.Cryptographies;
 using Organizarty.Identity.Application.App.Consumers.Data;
 using Organizarty.Utils.Validations.Extensions;
@@ -30,6 +31,8 @@ public class RegisterConsumerUseCase
 
         _userValidator.Check(consumer, "Fail while validating Consumer");
 
+        await AssertUniqueEmail(userDto.Email);
+
         var (password, salt) = _cryptograph.HashPassword(consumer.HashedPassword);
 
         consumer.HashedPassword = password;
@@ -51,5 +54,15 @@ public class RegisterConsumerUseCase
           HashedPassword = x.Password,
           BirthDate = x.BirthDate,
       };
+
+    private async Task AssertUniqueEmail(string email)
+    {
+        var consumer = await _consumerRepository.FindByEmail(email);
+
+        if (consumer is not null)
+        {
+            throw new EntityExistsException($"User with email {email} already exists.");
+        }
+    }
 }
 
