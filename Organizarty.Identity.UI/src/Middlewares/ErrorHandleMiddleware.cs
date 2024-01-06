@@ -26,13 +26,7 @@ public class ErrorHandleMiddleware
 
             context.Response.StatusCode = 400;
 
-            var ers = e.Errors
-                       .GroupBy(x => x.Field)
-                       .Select(x => new
-                       {
-                           Field = x.Key,
-                           Errors = x.Select(y => y.Message)
-                       });
+            var ers = e.ListErrorList();
 
             var body = new
             {
