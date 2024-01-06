@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Organizarty.Identity.Application.App.Consumers.Entities;
+using Organizarty.Identity.Application.App.ThirdParties.Entities;
 using Organizarty.Domain.Entities.Consumers;
 
 namespace Organizarty.Identity.Infra.Database.EF.Contexts;
@@ -10,6 +11,8 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Consumer> Consumers { get; set; } = default!;
     public DbSet<ConsumerEmailConfirmation> ConsumerEmailConfirmations { get; set; } = default!;
+
+    public DbSet<ThirdParty> ThirdParties { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
