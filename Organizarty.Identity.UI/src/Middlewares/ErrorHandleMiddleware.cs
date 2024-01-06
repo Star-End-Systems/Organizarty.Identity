@@ -16,7 +16,8 @@ public class ErrorHandleMiddleware
     }
 
     public async Task Invoke(HttpContext context)
-    { try
+    {
+        try
         {
             await next(context);
         }
@@ -51,7 +52,7 @@ public class ErrorHandleMiddleware
         {
             ErroLogger(e);
 
-            context.Response.StatusCode = 400;
+            context.Response.StatusCode = 409;
 
             await context.Response.WriteAsJsonAsync(new
             {

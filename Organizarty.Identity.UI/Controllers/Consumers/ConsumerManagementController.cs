@@ -5,7 +5,7 @@ namespace Organizarty.Identity.UI.Controllers;
 
 public partial class ConsumerController
 {
-    [HttpPost]
+    [HttpPost("register")]
     public async Task<IActionResult> RegisterConsumer(RegisterConsumerUseCase.SimpleRegister registerDto)
     {
         var consumer = await _registerConsumer.Execute(registerDto);
