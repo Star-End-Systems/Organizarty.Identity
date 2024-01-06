@@ -12,6 +12,7 @@ public static class ThirdPartyUseCasesInjection
         services.AddValidatorsFromAssemblyContaining<ThirdPartyValidation>();
 
         services.AddScoped<RegisterThirdPartyUseCase>();
+        services.AddScoped<LoginThirdPartyUseCase>();
 
         return services;
     }
