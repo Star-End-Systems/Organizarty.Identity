@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Organizarty.Identity.Application.App.Consumers.UseCases;
 
-namespace Organizarty.Identity.UI.Controllers;
+namespace Organizarty.Identity.UI.Controllers.Consumers;
 
 public partial class ConsumerController
 {

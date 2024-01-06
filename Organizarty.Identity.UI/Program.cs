@@ -5,13 +5,16 @@ using Organizarty.Web.Utils.ServicesConfigurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddTextCompression();
-
 builder.Services
                 .AddEnvironment()
                 .AddRepositories()
                 .AddProviders()
                 .AddUseCases();
+
+if (builder.Environment.IsProduction())
+{
+    builder.Services.AddTextCompression();
+}
 
 builder.Services.AddControllers();
 
@@ -22,12 +25,15 @@ builder.Services.AddSwaggerConfiguration();
 
 var app = builder.Build();
 
-app.UseResponseCompression();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseHsts();
+}
+else if (app.Environment.IsProduction())
+{
+    app.UseResponseCompression();
 }
 
 app.UseSwaggerConfiguration();

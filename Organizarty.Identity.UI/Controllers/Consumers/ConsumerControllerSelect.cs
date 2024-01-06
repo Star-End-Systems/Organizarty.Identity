@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Organizarty.Identity.UI.Helpers;
 using Organizarty.Domain.Exceptions;
 
-namespace Organizarty.Identity.UI.Controllers;
+namespace Organizarty.Identity.UI.Controllers.Consumers;
 
 public partial class ConsumerController
 {

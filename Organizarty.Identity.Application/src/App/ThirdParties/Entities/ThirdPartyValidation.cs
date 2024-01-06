@@ -2,7 +2,7 @@ using FluentValidation;
 using Organizarty.Identity.Application.App.ThirdParties.Entities;
 using Organizarty.Utils.Validations.CustomValidations;
 
-namespace Organizarty.Application.App.Users.Entities;
+namespace Organizarty.Application.App.ThirdParties.Entities;
 
 public class ThirdPartyValidation : AbstractValidator<ThirdParty>
 {

@@ -1,6 +1,6 @@
 using Organizarty.Domain.Entities.Consumers;
 
-namespace Organizarty.Identity.UI.Controllers;
+namespace Organizarty.Identity.UI.Controllers.Consumers;
 
 public record SecureConsumerResponse(string Id, string Fullname, DateTime BirthDate, string Email, bool EmailConfirmed, DateTime CreatedAt)
 {

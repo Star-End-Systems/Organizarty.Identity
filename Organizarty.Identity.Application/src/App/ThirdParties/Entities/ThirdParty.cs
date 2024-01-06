@@ -14,7 +14,7 @@ public class ThirdParty : Account
 
     public string CNPJ { get; set; } = default!;
 
-    public AuthorizationStatus AuthorizationStatus { get; set; } = default!;
+    public AuthorizationStatus AuthorizationStatus { get; set; } = AuthorizationStatus.Pending;
 
     public string? ContactEmail { get; set; }
     public string? ContactPhone { get; set; }

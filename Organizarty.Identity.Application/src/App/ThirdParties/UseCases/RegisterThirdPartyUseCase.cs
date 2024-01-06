@@ -13,7 +13,7 @@ public class RegisterThirdPartyUseCase
     private readonly IThirdPartyRepository _thirdPartyRepository;
     private readonly IValidator<ThirdParty> _thirdPartyValidator;
 
-    public record SimpleRegister(string Email, string Password);
+    public record RegisterThirdParty(string Email, string Password, string CNPJ, string Name, string Username, string? Description, string PhoneNumber, string? ContactEmail, string? ContactPhone);
 
     public RegisterThirdPartyUseCase(IThirdPartyRepository thirdPartyRepository, IValidator<ThirdParty> thirdPartyValidator, ICryptographys cryptograph)
     {
@@ -22,7 +22,7 @@ public class RegisterThirdPartyUseCase
         _cryptograph = cryptograph;
     }
 
-    public async Task<ThirdParty> Execute(SimpleRegister userDto)
+    public async Task<ThirdParty> Execute(RegisterThirdParty userDto)
     {
         var thirdParty = ToModel(userDto);
 
@@ -42,11 +42,18 @@ public class RegisterThirdPartyUseCase
         return u;
     }
 
-    private ThirdParty ToModel(SimpleRegister x)
+    private ThirdParty ToModel(RegisterThirdParty x)
       => new()
       {
           Email = x.Email,
           HashedPassword = x.Password,
+          CNPJ = x.CNPJ,
+          Name = x.Name,
+          UserName = x.Username,
+          Description = x.Description ?? "",
+          PhoneNumber = x.PhoneNumber,
+          ContactEmail = x.ContactEmail,
+          ContactPhone = x.ContactPhone
       };
 
     private async Task AssertUniqueEmail(string email)
